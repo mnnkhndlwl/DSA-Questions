@@ -23,6 +23,7 @@ public:
             } else {
                 // potential ans found
                 ans = mid;
+                //when our ans will be found binary search loop will break
                 if (findStartIndex) {
                     end = mid - 1;
                 } else {
