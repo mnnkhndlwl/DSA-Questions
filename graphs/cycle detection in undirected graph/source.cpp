@@ -27,7 +27,7 @@ class Solution {
     bool isCycle(int V, vector<int> adj[]) {
         // Code here
         vector<int> vis(V);
-        for(int i=0;i<V;i++)
+        for(int i=0;i<V;i++) // used for loop because we can have disconnected components
         {
             if(!vis[i])
             {
