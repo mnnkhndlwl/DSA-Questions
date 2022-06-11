@@ -31,9 +31,9 @@ class Solution
 	void dfs(vector<int> adj[],bool visited[],int v,stack<int>&s)
 	{
 	    visited[v] = true;
-	    for(int i:adj[v]){
-	        if(!visited[i])
-	        dfs(adj,visited,i,s);
+	    for(int neighbour:adj[v]){
+	        if(!visited[neighbour])
+	        dfs(adj,visited,neighbour,s);
 	    }
 	    s.push(v);
 	}
