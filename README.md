@@ -81,3 +81,15 @@
         - https://www.youtube.com/watch?v=ukTRZD-WJH4&list=PL-Jc9J83PIiHq5rMZasunIR19QG3E-PAA
    - Level2
         - https://www.youtube.com/watch?v=bit4Jn-ZoyQ&list=PL-Jc9J83PIiEp9DKNiaQyjuDeg3XSoVMR
+
+# visualize data structures and algorithms
+  
+  - https://visualgo.net/en
+
+# Leetcode patterns
+ 
+  - https://seanprashad.com/leetcode-patterns/
+
+# Leetcode most liked problems
+
+  - https://leetcode.com/problem-list/top-100-liked-questions/
