@@ -13,7 +13,7 @@ public:
         while(j<N)
         {
             sum+=Arr[j];
-            if(j-i+1<k)j++;
+            if(j-i+1<k)j++;  // j-i+1 is the window size
             else if(j-i+1==k){
                 maximum = max(maximum,sum);
                 sum-=Arr[i];
