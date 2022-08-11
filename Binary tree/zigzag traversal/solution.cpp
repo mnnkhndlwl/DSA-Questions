@@ -1,44 +1,54 @@
-// { Driver Code Starts
-#include<bits/stdc++.h>
-using namespace std;
+//User function Template for C++
+/*Structure of the node of the binary tree is as
+struct Node {
+    int data;
+    Node *left;
+    Node *right;
 
- // } Driver Code Ends
-class Solution{
-    public:
-
-    int longestCommonSubstr (string s1, string s2, int n, int m)
-    {
-       int dp[n+1][m+1],ans =0;
-       memset(dp,0,sizeof(dp));
-       for(int i =1;i<=n;i++)
-       {
-           for(int j=1;j<=m;j++)
-           {
-               if(s1[i-1]==s2[j-1])
-               dp[i][j] = 1 + dp[i-1][j-1];
-               else
-               dp[i][j] = 0;
-               ans = max(ans,dp[i][j]);
-           }
-       }
-       return ans;
+    Node(int val) {
+        data = val;
+        left = right = NULL;
     }
 };
+*/
 
-// { Driver Code Starts.
-
-int main()
-{
-    int t; cin >> t;
-    while (t--)
-    {
-        int n, m; cin >> n >> m;
-        string s1, s2;
-        cin >> s1 >> s2;
-        Solution ob;
-
-        cout << ob.longestCommonSubstr (s1, s2, n, m) << endl;
-    }
-}
-// Contributed By: Pranay Bansal
-  // } Dri
+class Solution{
+    public:
+    //Function to store the zig zag order traversal of tree in a list.
+    vector <int> zigZagTraversal(Node* node)
+   {
+    // Code here
+     queue<Node*> q;
+     if(node == NULL){
+       vector<int> vc;
+       return vc;
+   }
+     vector<vector<int>> vc;
+     q.push(node);
+     bool left_right=true;
+     while(!q.empty()){
+         int size=q.size();
+         vector<int> vc1(size);
+         for(int i=0;i<size;i++){
+         Node* temp=q.front(); 
+         int j=left_right ? i:(size-i-1);
+         vc1[j]=temp->data;
+         q.pop();
+         if(temp->left){
+             q.push(temp->left);
+         }
+         if(temp->right){
+             q.push(temp->right);
+         }
+       }
+       left_right=!left_right;
+         vc.push_back(vc1);
+     }
+     vector<int> ans;
+     for(int i=0;i<vc.size();i++){
+         for(int j=0;j<vc[i].size();j++){
+             ans.push_back(vc[i][j]);
+         }
+     }
+     return ans;
+   }
