@@ -1,0 +1,23 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+        int l = 0, r = 0, n = s.size();
+        for (int i = 0; i < n; i++) {
+            // looking for the space index
+            if (s[i] == ' ' || i == n - 1) {
+                // r is the index before the space
+                // if s[i] is space, then we want to reverse s[l : i - 1]
+                // if s[i] is the last character, then we want to reverse s[l : i]
+                r = i == n - 1 ? i : i - 1;
+                // swap the character
+                // e.g. s = `Let's` where l is 0 and r is 4
+                // Let's -> set'L -> s'teL
+                while (l < r) swap(s[l++], s[r--]);
+                // update left pointer which is i + 1
+                // i.e. the first index of the next word if applicable
+                l = i + 1;
+            }
+        }
+        return s;
+    }
+};
